@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
+/**
+ * This class represents the user table in the database.
+ */
 @Entity(name = "user")
 @NoArgsConstructor
 @AllArgsConstructor

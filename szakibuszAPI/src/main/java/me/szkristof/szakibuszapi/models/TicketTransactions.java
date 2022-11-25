@@ -5,6 +5,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * This class represents a ticket_transaction table in the database.
+ */
 @Entity(name = "ticket_transactions")
 @NoArgsConstructor
 @AllArgsConstructor

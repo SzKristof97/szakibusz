@@ -14,6 +14,9 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 
+/**
+ * This class is responsible for the user related operations.
+ */
 @Service
 public class UserService implements IUserService {
 
@@ -22,7 +25,7 @@ public class UserService implements IUserService {
     private UserRepository userRepository;
     //</editor-fold>
 
-    //<editor-fold default-state="collapsed" desc="methods">
+    //<editor-fold default-state="collapsed" desc="Methods">
     @Override
     @Parameter(name = "username", description = "The username of the user to register", required = true)
     @Parameter(name = "password", description = "The password of the user to register", required = true)

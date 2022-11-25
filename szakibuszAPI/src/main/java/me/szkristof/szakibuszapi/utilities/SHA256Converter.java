@@ -2,6 +2,7 @@ package me.szkristof.szakibuszapi.utilities;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 /***
  * This class is used to convert a string or a byte array to a SHA256 hash.
@@ -22,7 +23,7 @@ public class SHA256Converter {
             }
             hexString.append(hex);
         }
-        return hexString.toString();
+        return Base64.getEncoder().encodeToString(hexString.toString().getBytes(StandardCharsets.UTF_8));
     }
 
     /***

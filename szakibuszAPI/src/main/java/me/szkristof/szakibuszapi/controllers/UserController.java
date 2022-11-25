@@ -13,6 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * This class is responsible for handling the user related requests. (login, register, etc.)
+ */
 @RestController
 @RequestMapping(value = "/api", produces = "application/json")
 public class UserController {
@@ -20,6 +23,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    //<editor-fold default-state="collapsed" desc="Post MAPPING">
     @PostMapping("/user/login")
     public UserEntity login(
             @RequestBody LoginForm loginForm
@@ -34,6 +38,9 @@ public class UserController {
         return userService.registerUser(registerForm.getUsername(), SHA256Converter.convert(registerForm.getPassword()), registerForm.getEmail());
     }
 
+    //</editor-fold>
+
+    //<editor-fold default-state="collapsed" desc="Exception Handling">
     @ExceptionHandler(value = UserAlreadyExsitsException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
     public ErrorResponse handleTaskNotFoundException(UserAlreadyExsitsException e) {
@@ -51,4 +58,5 @@ public class UserController {
     public ErrorResponse handleTaskNotFoundException(UserPasswordNotMatchException e) {
         return new ErrorResponse(HttpStatus.NOT_FOUND.value(), e.getMessage());
     }
+    //</editor-fold>
 }

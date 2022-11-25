@@ -6,6 +6,9 @@ import me.szkristof.szakibuszapi.models.enums.TicketType;
 
 import javax.persistence.*;
 
+/**
+ * This class represents a ticket table in the database.
+ */
 @Entity(name = "ticket")
 @NoArgsConstructor
 @AllArgsConstructor

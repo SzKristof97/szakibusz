@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * This class is used to store the data sent by the user in the login form.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
